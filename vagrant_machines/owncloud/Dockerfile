@@ -1,6 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Javier Jerónimo <javier@jeronimosuarez.es>
 
+VOLUME ["/var/www", "/var/log/apache2"]
+
 # Apache2
 RUN apt-get update
 RUN apt-get install -y apache2
@@ -30,8 +32,6 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV LANG C
 
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
-
-VOLUME ["/var/www", "/var/log/apache2"]
 
 EXPOSE 80 443
 

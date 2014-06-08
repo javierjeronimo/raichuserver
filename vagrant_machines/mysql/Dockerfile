@@ -1,6 +1,9 @@
 FROM ubuntu:trusty
 MAINTAINER Fernando Mayo <fernando@tutum.co>, Feng Honglin <hfeng@tutum.co>
 
+# Add VOLUMEs to allow backup of config and databases
+VOLUME  ["/var/lib/mysql"]
+
 # Install packages
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen
@@ -17,9 +20,6 @@ ADD vendor/tutum-docker-mysql/create_mysql_admin_user.sh /create_mysql_admin_use
 ADD vendor/tutum-docker-mysql/import_sql.sh /import_sql.sh
 ADD vendor/tutum-docker-mysql/run.sh /run.sh
 RUN chmod 755 /*.sh
-
-# Add VOLUMEs to allow backup of config and databases
-VOLUME  ["/var/lib/mysql"]
 
 EXPOSE 3306
 
