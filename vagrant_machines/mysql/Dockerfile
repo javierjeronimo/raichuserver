@@ -22,4 +22,5 @@ RUN chmod 755 /*.sh
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
+
 CMD ["/run.sh"]
