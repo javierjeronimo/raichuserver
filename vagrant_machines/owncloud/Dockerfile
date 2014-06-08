@@ -2,9 +2,10 @@ FROM ubuntu:14.04
 MAINTAINER Javier Jerónimo <javier@jeronimosuarez.es>
 RUN apt-get update
 
-RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y apache2
 
-RUN apt-get install -y php5 php5-gd php-xml-parser php5-intl php5-sqlite
+RUN apt-get install -y php5 php5-gd php-xml-parser php5-intl php5-sqlite php5-mysql
 RUN apt-get install -y smbclient curl libcurl3 php5-curl bzip2 wget vim
 
 RUN wget -O - http://download.owncloud.org/community/owncloud-5.0.16.tar.bz2 | tar jx -C /var/www/
