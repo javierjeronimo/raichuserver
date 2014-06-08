@@ -10,7 +10,7 @@ RUN apt-get install -y smbclient curl libcurl3 php5-curl bzip2 wget vim
 RUN wget -O - http://download.owncloud.org/community/owncloud-5.0.16.tar.bz2 | tar jx -C /var/www/
 RUN chown -R www-data:www-data /var/www/owncloud
 
-ADD ./src/owncloud.conf /etc/apache2/sites-available/owncloud.conf
+ADD ./resources/owncloud.conf /etc/apache2/sites-available/owncloud.conf
 RUN a2ensite owncloud
 RUN a2enmod rewrite
 

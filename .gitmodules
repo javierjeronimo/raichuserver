@@ -1,0 +1,6 @@
+[submodule "vagrant_machines/owncloud/vendor/dockerfiles"]
+	path = vagrant_machines/owncloud/vendor/dockerfiles
+	url = https://github.com/yankcrime/dockerfiles.git
+[submodule "vagrant_machines/mysql/vendor/tutum-docker-mysql"]
+	path = vagrant_machines/mysql/vendor/tutum-docker-mysql
+	url = https://github.com/tutumcloud/tutum-docker-mysql.git
