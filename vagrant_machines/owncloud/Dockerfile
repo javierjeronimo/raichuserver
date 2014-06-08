@@ -31,8 +31,8 @@ ENV LANG C
 
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
-EXPOSE 80 443
-
 VOLUME ["/var/www", "/var/log/apache2"]
+
+EXPOSE 80 443
 
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
