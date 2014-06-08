@@ -19,7 +19,7 @@ ADD vendor/tutum-docker-mysql/run.sh /run.sh
 RUN chmod 755 /*.sh
 
 # Add VOLUMEs to allow backup of config and databases
-VOLUME  ["/etc/mysql", "/var/lib/mysql"]
+VOLUME  ["/var/lib/mysql"]
 
 EXPOSE 3306
 

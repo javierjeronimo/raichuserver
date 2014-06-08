@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     d.build_dir = '.'
     d.name = 'bdd01'
     d.ports = ['3306:3306']
+    d.volumes = ['/var/lib/mysql']
   end
 end
 
