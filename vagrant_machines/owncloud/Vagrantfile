@@ -8,9 +8,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider 'docker' do |d|
     d.build_dir = '.'
-    d.name = 'owncloud'
+#    d.name = 'owncloud'
     d.link('bdd01:mysql')
     d.ports = ['80:80', '443:443']
-    d.volumes = ['/var/www:/var/www', '/var/log/apache2:/var/log/apache2']
+    d.volumes = ['/var/raichu/owncloud/data:/var/www/owncloud/data','/var/raichu/owncloud/apache2/log:/var/log/apache2']
+    d.build_args = ['--no-cache=true']
+    d.cmd = ['/usr/sbin/apache2', '-D', 'FOREGROUND']
   end
 end

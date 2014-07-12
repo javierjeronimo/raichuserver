@@ -7,10 +7,9 @@ VAGRANTFILE_API_VERSION = '2'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider 'docker' do |d|
-    d.build_dir = '.'
-    d.name = 'bdd01'
-    d.ports = ['3306:3306']
-    d.volumes = ['/var/raichu/mysql/lib:/var/lib/mysql']
+    d.image = 'shipyard/deploy'
+    d.name = 'shipyard-server'
+    d.volumes = ['/var/run/docker.sock:/docker.sock']
+    d.cmd = ['setup']
   end
 end
-

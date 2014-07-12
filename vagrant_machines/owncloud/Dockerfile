@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Javier Jerónimo <javier@jeronimosuarez.es>
 
-VOLUME ["/var/www", "/var/log/apache2"]
+VOLUME ["/var/www/owncloud/data","/var/log/apache2"]
 
 # Apache2
 RUN apt-get update
@@ -35,4 +35,5 @@ RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
 EXPOSE 80 443
 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+# Moved to Vagrantfile
+# CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
