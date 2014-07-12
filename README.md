@@ -47,3 +47,24 @@ Based in https://github.com/yankcrime/dockerfiles
 cd vagrant_machines/owncloud
 sudo vagrant up --provider=docker
 ```
+
+### Shipyard Server
+
+Web UI to manage Docker containers/images in a set of hosts
+
+```
+cd vagrant_machines/shipyard-server
+sudo vagrant up --provider=docker
+```
+
+Now, access: http://server:8000
+
+### Shipyard Agent for each host
+
+```
+cd vagrant_machines/shipyard-agent
+sudo vagrant up --provider=docker
+```
+
+Now, enable host from Shipyard UI.
+
